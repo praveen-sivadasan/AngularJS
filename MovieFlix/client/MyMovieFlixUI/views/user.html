@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="userModule" >
+<head>
+    <link id="favicon" rel="icon" type="image/x-icon" href="../resources/img/favicon.ico" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>.:: User Home ::.</title>
+
+    <!-- CSS Stylesheets -->
+    <link rel="stylesheet" href="../resources/css/style.css">
+    <link type="text/css" href="../resources/css/jquery-ui-1.10.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="../resources/css/bootstrap.min.css">
+
+    <!-- JS -->
+    <script type="text/javascript" src="../resources/js/jquery-1.10.2.js"></script>
+    <script type="text/javascript" src="../resources/js/jquery-ui.js"></script>
+
+    <!--Angular js-->
+    <script type="text/javascript" src="../resources/js/angular.min.js"></script>
+    <script type="text/javascript" src="../resources/js/angular-resource.js"></script>
+
+    <script type="text/javascript" src="../resources/js/ui-bootstrap-tpls-0.10.0.min.js"></script>
+    <script type="text/javascript" src="../resources/js/angular-bootstrap-select.js"></script>
+    <script type="text/javascript" src="../resources/js/bootstrap.min.js"></script>
+
+    <!--  Page References - START -->
+    <script type="text/javascript" src="../modules/userModule.js"></script>
+    <script type="text/javascript" src="../modules/loginModule.js"></script>
+    <script type="text/javascript" src="../services/userService.js"></script>
+    <script type="text/javascript" src="../factory/ApplicationConstants.js"></script>
+    <script type="text/javascript" src="../controllers/userCtrl.js"></script>
+
+    <!--  Page References - END -->
+
+    <style>
+        #content {
+            margin: 0 auto;
+            width: 78% !important;
+        }
+
+        .navbar_ .navbar-inner_ {
+            background: #1b1b1c url("../resources/img/header-block.jpg") repeat-x scroll 0 0;
+            border: medium none;
+            margin: 0;
+            padding: 2px 0 8px 45px;
+        }
+
+        footer {
+            background: #1f1e21 url("../resources/img/bg-content.jpg") repeat scroll 0 0;
+            color: #8e8e8e;
+            margin-top: 5px;
+            padding: 26px 0 38px;
+        }
+
+        /*fdfdfdfdf*/
+
+        .modal-body {
+            /* max-height: 376px !important; */
+        }
+
+        .modal-dialog {
+            width: 76%  !important;
+        }
+
+
+    </style>
+
+</head>
+
+<header class="p0">
+    <div class="container">
+        <div class="row">
+            <div class="span12">
+                <div class="header-block clearfix">
+                    <div class="clearfix header-block-pad">
+                        <h1 class="brand">
+                            <a href="index.html"><img class="logo"  src="../resources/img/logo.png" alt=""></a>
+                        </h1>
+                        <div style="text-align: right;">
+							<span class="loggeduser">Welcome: <span>{{loggedUser.firstName}}
+							</span><br></span> <a href="../logout" style="display: inline;padding-left: 13px;"><img src="../resources/img/logout.png" alt="logout"/></a>
+                        </div>
+                    </div>
+
+                    <div class="navbar navbar_ clearfix">
+                        <div class="navbar-inner navbar-inner_">
+                            <div class="container">
+                                <a class="btn btn-navbar" data-toggle="collapse"
+                                   data-target=".nav-collapse_">MENU</a>
+                                <div class="nav-collapse nav-collapse_ collapse">
+                                    <ul class="nav sf-menu">
+                                        <li class="active li-first"><a href="user.html"
+                                                                       target="right-panel"><em class="hidden-phone"></em><span
+                                                class="visible-phone">Home</span></a></li>
+                                        <li><a href="#" target="right-panel">My Profile</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<section id="content" class="main-content">
+    <div class="container" style="margin-top: 6px; padding-top: 11px;">
+        <div>
+            <div class="successMessage category-placer2"
+                 ng-show="successMessage.length > 0">
+                <li ng-repeat="message in successMessage">{{message}}</li>
+            </div>
+
+            <div class="errorMessage"
+                 ng-show="errorMessage.length > 0">
+                <li ng-repeat="message in errorMessage">{{message}}</li>
+            </div>
+        </div>
+
+       <div ng-view></div>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="span12 float">
+                Movie Flix &copy; 2012 | <a href="#">Privacy Policy</a> More <a
+                    rel="nofollow" href="#" target="_blank"> at Zhonors.com</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+</html>

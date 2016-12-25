@@ -1,0 +1,36 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<div class="container">
+    <div class="top">
+        <h1 id="title" class="hidden">
+            <span id="logo"> <span>MovieFlix</span></span>
+        </h1>
+    </div>
+    <div class="login-box animated fadeInUp" style="padding-bottom: 17px;top:0px;">
+        <div class="box-header">
+            <h2>Log In</h2>
+        </div>
+
+        <div class="clear"></div>
+
+        <div>
+            <div class="successMessage category-placer2"
+                 ng-show="successMessage.length > 0">
+                <li ng-repeat="message in successMessage">{{message}}</li>
+            </div>
+
+            <div class="errorMessage"
+                 ng-show="errorMessage.length > 0">
+                <li ng-repeat="message in errorMessage">{{message}}</li>
+            </div>
+        </div>
+
+        <form>
+            <label for="username">Username</label> <br /> <input type="text" ng-model="username" id="username"><br/>
+            <label for="password">Password</label> <br /> <input type="password" ng-model="password" id="password"> <br />
+            <input type="button" value="Sign In" ng-click="findUserById()"/> <br />
+            <a href="#"><p class="small" style="display: inline;">Register&nbsp;</p></a>
+            <p class="small" style="display: inline;">|</p>
+            <a href="#"><p class="small" style="display: inline;">Forgot your password?</p></a>
+        </form>
+    </div>
+</div>

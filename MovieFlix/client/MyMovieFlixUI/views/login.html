@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="loginModule" >
+<head>
+    <link id="favicon" rel="icon" type="image/x-icon" href="../resources/img/favicon.ico" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>.:: Login ::.</title>
+
+    <!-- CSS Stylesheets -->
+    <link rel="stylesheet" href="../resources/css/animate_login.css">
+    <link rel="stylesheet" href="../resources/css/style_login.css">
+    <link type="text/css" href="../resources/css/jquery-ui-1.10.css" rel="stylesheet" />
+
+    <!-- JS -->
+    <script type="text/javascript" src="../resources/js/jquery-1.10.2.js"></script>
+    <script type="text/javascript" src="../resources/js/jquery-ui.js"></script>
+
+    <!--Angular js-->
+    <script type="text/javascript" src="../resources/js/angular.min.js"></script>
+    <script type="text/javascript" src="../resources/js/angular-resource.js"></script>
+
+    <!--  Page References - START -->
+    <script type="text/javascript" src="../modules/loginModule.js"></script>
+    <script type="text/javascript" src="../services/userService.js"></script>
+    <script type="text/javascript" src="../factory/ApplicationConstants.js"></script>
+    <script type="text/javascript" src="../controllers/loginCtrl.js"></script>
+    <!--  Page References - END -->
+
+</head>
+<body>
+    <div ng-view></div>
+</body>
+
+<script>
+    $(document).ready(function() {
+        $('#logo').addClass('animated fadeInDown');
+        $("input:text:visible:first").focus();
+    });
+    $('#username').focus(function() {
+        $('label[for="username"]').addClass('selected');
+    });
+    $('#username').blur(function() {
+        $('label[for="username"]').removeClass('selected');
+    });
+    $('#password').focus(function() {
+        $('label[for="password"]').addClass('selected');
+    });
+    $('#password').blur(function() {
+        $('label[for="password"]').removeClass('selected');
+    });
+</script>
+</html>

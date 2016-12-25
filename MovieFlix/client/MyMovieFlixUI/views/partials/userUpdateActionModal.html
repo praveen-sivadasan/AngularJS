@@ -1,0 +1,33 @@
+<div ng-show="update">
+
+    <div class="category-header-contact" >
+        <h3 class="category-header-text">
+            Hii header
+        </h3>
+    </div>
+
+    <div class="modal-body">
+        <div>
+            <div class="successMessage category-placer2"
+                 ng-show="successMessage.length > 0">
+                <li ng-repeat="message in successMessage">{{message}}</li>
+            </div>
+
+            <div class="errorMessage category-placer2"
+                 ng-show="errorMessage.length > 0">
+                <li ng-repeat="message in errorMessage">{{message}}</li>
+            </div>
+        </div>
+
+          <div class="clear"/>
+
+    </div>
+
+
+
+    <div class="modal-footer">
+        <div style="text-align:center">
+            <button class="btn btn-primary" >Update</button>
+        </div>
+    </div>
+</div>
